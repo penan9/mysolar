@@ -1,0 +1,22 @@
+{% extends "header.html" %}
+{% block myContent %}
+  <header class="showcase">
+    <div class="container showcase-inner">
+                    <div class="grid">
+                <div></div>
+                <div>
+      <h2 style="text-align: center">Welcome to</h2>
+      <h1 style="text-align: center">Kemuning Oil & Gas!</h1>
+              {% for about in about1 %}
+        {% if about.header == "Read_More" %}
+        <h1>{{about.name}}</h1>
+        <p>{{about.body}}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+    <div><br></div>
+      <a href="/sendemail"><span class="blink">Contact Us now!</span></a>
+    </div>
+  </header>
+  {% endblock %}

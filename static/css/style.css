@@ -1,0 +1,317 @@
+/* CORE STYLES */
+:root {
+  --primary-color: rgba(13, 110, 139, 0.75);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.75s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif, arial;
+  line-height: 1.4;
+  color: yellow;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  height: auto;
+  padding: 5px 5px;
+}
+
+.showcase {
+  background: var(--primary-color);
+  color: #fff;
+  height: 100vh;
+  position: relative;
+}
+
+.showcase:before {
+  content: '';
+/*  background: url('/media/images/home/background.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+  position: absolute;
+  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.showcase .showcase-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.showcase h1 {
+  font-size: 3rem;
+}
+
+.showcase p {
+  font-size: 1.3rem;
+}
+
+.grid {
+    display: grid;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.row {
+    width: 260px;
+    text-align: left;
+    height: 400px;
+    overflow-y: overlay;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.row p {
+    margin-bottom: 0;
+}
+
+.row > label {
+    text-align: left;
+}
+
+.msg {
+    padding: 2px;
+    line-height: normal;
+    font-size: 14px; color:white; 
+    font-type: arial;
+    overflow: visible;
+}
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+}
+.blink{
+    color: yellow;
+    font-size: 20px;
+    text-decoration: blink;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+
+input {
+    padding: 2px;
+    color: dimgrey;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 260px;
+    display: block;
+}
+
+textarea {
+    padding: 2px;
+    color: dimgrey;
+    border-radius: 4px;
+    border-color: grey;
+    width: 260px;
+    font-size: 14px;
+}
+
+card {
+    width: 50rem;
+}
+
+.form-actions {
+    font-size: 22px;
+    padding: 0px;
+    border-radius: 4px;
+}
+
+.form-control {
+    width: 290px;
+}
+
+.btn {
+  display: block;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  transition: opacity 1s ease-in-out;
+  text-decoration: none;
+}
+
+button {
+    height: 25px;
+    width: 90px;
+    background-color: skyblue;
+    border-radius: 8px;
+    color: white;
+    font: 14px arial, sans-serif;
+}
+
+button:hover {
+    color: whitesmoke;
+    font: 16px bold;
+    background-color: rgba(0,0,0.01,0.05);
+    box-shadow: 0 16px 18px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    opacity: 0.7;
+}
+
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : portrait) {
+#myVideo {
+visibility: hidden;
+}
+    body {
+        /*
+  background: url('https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+  */
+  background: url('/media/images/home/oil1.png');
+}
+}
+
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+.content {
+  color: #f1f1f1;
+  }
+}
+
+#myVideo-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 0;}
+#myVideo{
+       width:100%;
+    height:auto;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  color: #f1f1f1;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 100px;
+  font-size: 18px;
+  padding: 1px;
+  border: none;
+  background: grey;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+#fading-r {
+  color: red;
+  animation-name: fading-r;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes fading-r {
+  from {color: red;}
+  to {color: skyblue;}
+}
+
+#fading-h {
+  color: red;
+  animation-name: fading-h;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes fading-h {
+  from {color: red;}
+  to {color: white;}
+}
+
+#rotateX {
+  transform: rotateX(150deg);
+}
+
+/*
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+ */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.h1-f1 h1 {
+    font-family:Copperplate,courier,arial,helvetica;
+}
+
+#footer {
+  background: rgba(0, 0, 0, 0.05);
+  color: white;
+  width: 100%;
+  bottom: 0;
+  text-align: left;
+  position: fixed;
+  left: 0;
+}
+
+.sitemessage {
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 10s infinite linear;
+  padding-right: -50%; /*Initial offset*/
+  margin: 0;
+}
+.sitemessage:hover {
+  animation-play-state: paused;
+}
+@keyframes floatText {
+  to {
+    transform: translateX(100%);
+  }
+}

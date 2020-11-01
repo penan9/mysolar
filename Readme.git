@@ -1,0 +1,11 @@
+  742  git branch
+  743  git checkout -b blog_0502 blog_0501
+  746  touch blog_0502
+  747  git status
+  748  git add blog_0502
+  749  git status
+  750  git commit -m "blog_0502"
+  753  git push --set-upstream origin blog_0502
+  754  git pull
+  755  h
+(mysite-virtualenv) 18:58 ~/projects/blog (blog_0502)$ 

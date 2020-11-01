@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+<style>
+.bckgrd {
+    background: url('/media/{{image1.file}}');
+}
+.bckgrd-2 {
+    background: url('/media/{{image2.file}}');
+  background-repeat: no-repeat;
+}
+.bckgrd-3 {
+      /* Full height 
+      */
+background: url('/media/images/hp/b1.png');
+
+  /* Center and scale the image nicely */
+  background-repeat: no-repeat;
+}
+</style>
+</head>
+{% if image1 %}
+<body class="bckgrd">
+    {% else %}
+{% if image2 %}
+<body class="bckgrd-2">
+    {% else %}
+<body class="bckgrd-3">
+        {% endif %}
+        {% endif %}
+
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><a href="/sendemail">Contact Us</a></li>
+      <li><a href="/admin">Admin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  {% block myContent0 %}
+  {% endblock %}
+  {% block myContent %}
+  {% endblock %}
+</body>
+</html>

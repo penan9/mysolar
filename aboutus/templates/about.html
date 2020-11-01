@@ -1,0 +1,19 @@
+{% extends "header.html" %}
+{% block myContent %}
+  <header class="showcase">
+    <div class="container showcase-inner">
+        <div class="grid">
+                <div></div>
+            <div>
+        {% for about in about1 %}
+        {% if about.header == "About_Us" %}
+        <h1 id="fading-r">{{about.name}}</h1>
+        <p>{{about.body}}</p>
+        {% endif %}
+        {% endfor %}
+            </div>
+        </div>
+      <a href="/read_more" class="btn">Read More</a>
+    </div>
+  </header>
+{% endblock %}

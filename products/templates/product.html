@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+
+{% block myContent0 %}
+{% endblock %}
+{% block myContent %}
+  <header class="showcase">
+    <div class="container showcase-inner">
+      <div class ="container h1-f1">
+    <style>
+        h1 { color: lightyellow; }
+        div { color: brown; margin-bottom: 10px }
+        body {
+        overflow: hidden;
+        }
+    </style>
+    <h1 id="fading-r">PRODUCTS:</h1>
+    <div class="row" style="overflow-y: scroll; max-height: 400px">
+
+        {% for product in products%}
+            <div class="col" style="width: 20rem;">
+                <div class="card">
+                    <img class="card-img-top" src="{{MEDIA_URL}}{{product.photo}}" alt="...">
+                    <div class="card-body" style="height: 20rem;">
+                        <h5 class="card-title">Product: {{product.name}}</h5>
+                        <p class="card-text" style="font-size: 14px;">Price: ${{product.price}}/${{product.price2}}</p>
+                        <p class="card-text" style="font-size: 14px;">Qty: {{product.stock}}{{product.unit}}</p>
+                        <a href="../products/{{product.id}}/">Documents: {{product.doc}}</a>
+                        <a href="../procedures/{{product.code2}}/" class="btn btn-primary">{{product.button_name}}</a>
+                    </div>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+    </div>
+    <footer id="footer" class="sitemessage">
+        Last updates {{last_date}}. Scroll down the product list ...
+  </footer>
+    </div>
+  </header>
+{% endblock %}

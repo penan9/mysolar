@@ -1,0 +1,93 @@
+{% extends 'header.html' %}
+
+{% block myContent %}
+    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.outer {
+    padding: 50px;
+        text-align: center;
+}
+      .wrapper {
+            max-width: 960px;
+            max-height: 280px;
+  margin: auto;
+  overflow: auto;
+  padding: 5px 5px;
+      }
+
+      #boxes {
+        content: "";
+        clear: both;
+            margin: 5px;
+      }
+      #boxes h3{
+        font-family: arial, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+            color: darkslategray;
+      }
+      #boxes p{
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: none;
+            color: dimgrey;
+      }
+      .col div {
+        float: left;
+        height: 100px;
+        width: 23%;
+        padding: 0 10px;
+            height: 78px;
+  overflow: auto;
+      }
+      #column1 {
+        background-color: #a1edcc;
+        width: 20%;
+      }
+      #column2 {
+        background-color: #a0e9ed;
+        width: 60%;
+      }
+      #column3 {
+        background-color: #a1edcc;
+        width: 20%;
+            text-align:center;
+      }
+      h2 {
+        color: #000000;
+        text-align: center;
+      }
+    </style>
+<header class="showcase">
+     <div class = "outer" h1-f1>
+    <h1 id="fading-r">DOCUMENTS:</h1>
+    {% for product in products %}
+    <h2 id="fading-r">{{product.name}}</h2>
+{% endfor %}
+    </div>
+    <div class="wrapper">
+                                                  <main id="boxes">
+               <div class="col">
+      <div id="column1"> <h3>Title</h3> </div>
+          <div id="column2"><h3>Descriptions</h3> </div>
+          <div id="column3"><h3>Document</h3> </div>
+               </div>
+               {% for product_detail in product_details%}
+               <div class="col">
+      <div id="column1">            <p>{{product_detail.title}}</p> </div>
+          <div id="column2"><p>{{product_detail.desc}}</p> </div>
+          <div id="column3"><p><a href="{{MEDIA_URL}}{{product_detail.photo}}"><img src="{{MEDIA_URL}}{{product_detail.thumbnail}}" width=60px" height="70px" alt="..."></a></p> </div>
+               </div>
+                                    {%endfor%} 
+    </main>
+    </div>
+    <div class="col">
+    <p style="text-align:center"><a href="javascript:history.back()" style="color: skyblue">Go Back</a></p>
+    </div>
+    <footer id="footer" class="sitemessage">
+        Latest updates on {{last_date}} ...
+  </footer>
+</header>
+{% endblock %}

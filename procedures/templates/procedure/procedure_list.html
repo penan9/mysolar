@@ -1,0 +1,22 @@
+{% extends "header.html" %}
+
+{% block myContent %}
+  <header class="showcase">
+    <div class="container showcase-inner">
+        <h1>Procedure List</h1>
+        {% if procedure1 %}
+                <div class="grid">
+                <div></div>
+            <div
+            <div class="procedure">
+                <h2>{{ procedure1.title }}</h2>
+                <p style="white-space: pre-wrap;text-align:left; font-size: 15px; font-type: arial">{{ procedure1.body }}</p>
+                <p>{{ procedure1.date }}</p>
+            </div>
+        <p><a href="javascript:history.back()" style="color: skyblue">Go Back</a></p>
+            </div>
+        </div>
+        {% endif %}
+        </div>
+  </header>
+{% endblock %}
